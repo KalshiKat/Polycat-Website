@@ -147,11 +147,11 @@ nav .navlinks .xicon{color:white}
 <div class="trade-panel">
   <div class="trade-label">CONTRACT ADDRESS</div>
   <div class="ca-row">
-    <div class="ca-text" id="caText">CA WILL APPEAR HERE AT LAUNCH</div>
-    <button class="copy-btn" id="copyCA" disabled>COPY CA</button>
+    <div class="ca-text" id="caText">9Uqpbbpq7EzAtotoQJhRhD9DUnWAQKB2Bzc2ym7J4yzD</div>
+    <button class="copy-btn" id="copyCA" type="button">COPY CA</button>
   </div>
   <button class="buy-btn preview" type="button" disabled>BUY $POLYCAT • AVAILABLE AT LAUNCH</button>
-  <div class="launch-note">The official CA and direct trading link will be activated here when $POLYCAT launches.</div>
+  <div class="launch-note">Official $POLYCAT contract address. Always verify the CA before trading.</div>
 </div>
 </div></section>
 
@@ -169,4 +169,15 @@ nav .navlinks .xicon{color:white}
 <script>
 document.documentElement.style.overflowX='hidden';document.body.style.overflowX='hidden';
 document.addEventListener('touchmove',e=>{if(Math.abs(e.touches[0]?.clientX||0)>innerWidth+10)e.preventDefault()},{passive:false});
-</script></body></html>
+</script><script>
+(function(){
+  const ca = "9Uqpbbpq7EzAtotoQJhRhD9DUnWAQKB2Bzc2ym7J4yzD";
+  const btn = document.getElementById("copyCA");
+  if (btn) btn.addEventListener("click", async function() {
+    try { await navigator.clipboard.writeText(ca); btn.textContent = "COPIED"; }
+    catch (e) { const t=document.createElement("textarea"); t.value=ca; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); btn.textContent="COPIED"; }
+    setTimeout(() => btn.textContent = "COPY CA", 1600);
+  });
+})();
+</script>
+</body></html>
